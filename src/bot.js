@@ -36,6 +36,7 @@ const SHOW_RANDOM_HELP_TIMER = parseInt(argv['ShowHelpTimer'] || process.env.TIP
 
 const debugMode = process.env.NODE_ENV === 'development' ? true : false
 
+const debugMode = true
 
 
 const TIPBOT_OPTIONS = {
