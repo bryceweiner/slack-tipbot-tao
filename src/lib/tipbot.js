@@ -20,7 +20,7 @@ let TipBot = function (bot, RPC_USER, RPC_PASSWORD, RPC_PORT, OPTIONS) {
   if (!bot) { throw new Error('Connection with Slack not availible for tipbot') }
 
   const HighBalanceWarningMark = Coin.toSmall(1.0)
-  self.CYBERCURRENCY = 'DASH'  // upper case for compare
+  self.CYBERCURRENCY = 'TAO'  // upper case for compare
   const BLACKLIST_CURRENCIES = [self.CYBERCURRENCY]
 
   self.initializing = false
@@ -478,7 +478,7 @@ TipBot.prototype.normalizeValue = function (inputValue, unit, user, outputCurren
           currency = self.CYBERCURRENCY
           value = parseFloat(inputValue)
         }
-        if (unit.match(/DASH/i)) {
+        if (unit.match(/TAO/i)) {
           currency = self.CYBERCURRENCY
           value = Coin.toSmall(inputValue)
         }

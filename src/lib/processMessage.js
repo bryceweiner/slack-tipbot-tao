@@ -268,7 +268,7 @@ module.exports = function (message, channel, user, DMchannelID, tipbot) {
       tipbot.slack.say(reply)
       return
     }
-    // convert amount if currency isn't Dash
+    // convert amount if currency isn't Tao
     tipbot.normalizeValue(amount[1], amount[2], user)
       .then(converted => {
         // ask for confirmation (needed if doing a conversion: withdraw x euro)
@@ -357,7 +357,7 @@ module.exports = function (message, channel, user, DMchannelID, tipbot) {
 
     // address and amount is provided => save setup
     if (amount !== null) {
-      // convert amount if currency isn't Dash
+      // convert amount if currency isn't Tao
       tipbot.normalizeValue(amount[1], amount[2], user)
         // amount converted, save setup
         .then(converted =>
@@ -434,7 +434,7 @@ module.exports = function (message, channel, user, DMchannelID, tipbot) {
         //not provided, set dash as default currency
         currency = tipbot.CYBERCURRENCY
       }
-      // convert if currency isn't Dash
+      // convert if currency isn't Tao
       tipbot.normalizeValue(amount[1], currency, user)
         .then(converted => {
           // send amount (move between accounts in wallet)
@@ -680,7 +680,7 @@ module.exports = function (message, channel, user, DMchannelID, tipbot) {
               // function (err, threshold) {
               //     if (err) { debug(err); return; }
               //     reply.text += '\n' + tipbotTxt.RainThreshold1 +
-              //         Coin.toLarge(threshold) + ' Dash \n' +
+              //         Coin.toLarge(threshold) + ' Tao \n' +
               //         tipbotTxt.RainThreshold2;
               //     tipbot.slack.say(reply);
               // });
